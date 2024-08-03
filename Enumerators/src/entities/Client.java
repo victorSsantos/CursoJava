@@ -8,10 +8,6 @@ public class Client {
     private String email;
     private Date birthDate;
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
