@@ -62,5 +62,7 @@ public class Program {
         for(var product : products){
             System.out.println(product.priceTag());
         }
+
+        sc.close();
     }
 }
