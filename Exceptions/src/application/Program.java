@@ -1,6 +1,7 @@
 package application;
 
 import model.entities.Reservation;
+import model.exceptions.DomainException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -55,14 +56,17 @@ public class Program {
             }
             while(updateDate);
         }
+        catch(InputMismatchException e){
+            System.out.println("Invalid number room format");
+        }
         catch (ParseException e) {
             System.out.println("Invalid Date format");
         }
-        catch (IllegalArgumentException e) {
+        catch (DomainException e) {
             System.out.println("Error reservation: " + e.getMessage());
         }
-        catch(InputMismatchException e){
-            System.out.println("Invalid number room format");
+        catch(RuntimeException e){
+            System.out.println("Unexpected error");
         }
 
         sc.close();
