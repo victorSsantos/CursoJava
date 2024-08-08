@@ -1,11 +1,16 @@
 package DependencyInjection.model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Installment {
 
-    private final LocalDate dueDate;
-    private final Double amount;
+    private LocalDate dueDate;
+    private Double amount;
+    private static final DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public Installment(){
+    }
 
     public Installment(LocalDate dueDate, Double amount) {
         this.dueDate = dueDate;
@@ -18,5 +23,10 @@ public class Installment {
 
     public Double getAmount() {
         return amount;
+    }
+
+    @Override
+    public String toString() {
+        return fmt.format(getDueDate()) + " - " + String.format("%.2f",getAmount());
     }
 }

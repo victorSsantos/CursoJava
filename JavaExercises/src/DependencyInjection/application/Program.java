@@ -34,10 +34,10 @@ public class Program {
         if(contract.getInstallments()!=null){
             System.out.println("INSTALLMENTS:");
             for(var installment:contract.getInstallments()){
-                System.out.println(fmt.format(installment.getDueDate())
-                        + " - "
-                        + String.format("%.2f",installment.getAmount()));
+                System.out.println(installment);
             }
         }
+
+        sc.close();
     }
 }

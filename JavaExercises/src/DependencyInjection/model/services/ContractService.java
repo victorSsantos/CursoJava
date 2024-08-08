@@ -4,7 +4,7 @@ import DependencyInjection.model.entities.Contract;
 import DependencyInjection.model.entities.Installment;
 import DependencyInjection.model.interfaces.OnlinePaymentService;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class ContractService {
 
@@ -15,14 +15,15 @@ public class ContractService {
     }
 
     public void processContract(Contract contract, Integer months){
-        ArrayList<Installment> installments = new ArrayList<>();
-        Double baseAmount = contract.getTotalValue() / months;
+        LocalDate basicDate = contract.getDate();
+        double basicAmount = contract.getTotalValue() / months;
 
         for(var i = 1 ; i <= months ; i++){
-            Double amount = baseAmount + this.paymentService.interest(baseAmount, i);
-            amount += this.paymentService.paymentFee(amount);
-            installments.add(new Installment(contract.getDate().plusMonths(i), amount));
+            var interest = this.paymentService.interest(basicAmount, i);
+            var paymentFee = this.paymentService.paymentFee(basicAmount + interest);
+            var amountTotal = basicAmount + interest + paymentFee;
+
+            contract.getInstallments().add(new Installment(basicDate.plusMonths(i), amountTotal));
         }
-        contract.setInstallments(installments);
     }
 }
