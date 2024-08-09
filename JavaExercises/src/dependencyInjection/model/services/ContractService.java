@@ -1,8 +1,8 @@
-package DependencyInjection.model.services;
+package dependencyInjection.model.services;
 
-import DependencyInjection.model.entities.Contract;
-import DependencyInjection.model.entities.Installment;
-import DependencyInjection.model.interfaces.OnlinePaymentService;
+import dependencyInjection.model.entities.Contract;
+import dependencyInjection.model.entities.Installment;
+import dependencyInjection.model.interfaces.OnlinePaymentService;
 
 import java.time.LocalDate;
 

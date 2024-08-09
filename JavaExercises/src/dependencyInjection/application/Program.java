@@ -1,8 +1,8 @@
-package DependencyInjection.application;
+package dependencyInjection.application;
 
-import DependencyInjection.model.entities.Contract;
-import DependencyInjection.model.services.ContractService;
-import DependencyInjection.model.services.PaypalService;
+import dependencyInjection.model.entities.Contract;
+import dependencyInjection.model.services.ContractService;
+import dependencyInjection.model.services.PaypalService;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

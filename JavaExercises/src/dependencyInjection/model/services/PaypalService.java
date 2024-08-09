@@ -1,6 +1,6 @@
-package DependencyInjection.model.services;
+package dependencyInjection.model.services;
 
-import DependencyInjection.model.interfaces.OnlinePaymentService;
+import dependencyInjection.model.interfaces.OnlinePaymentService;
 
 public class PaypalService implements OnlinePaymentService {
 

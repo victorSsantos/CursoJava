@@ -1,4 +1,4 @@
-package DependencyInjection.model.interfaces;
+package dependencyInjection.model.interfaces;
 
 public interface OnlinePaymentService {
 
