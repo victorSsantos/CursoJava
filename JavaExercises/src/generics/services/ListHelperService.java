@@ -2,7 +2,7 @@ package generics.services;
 
 import java.util.List;
 
-public class CalculationService {
+public class ListHelperService {
 
     public static <T extends Comparable<T>> T max (List<T> list){
 
@@ -15,5 +15,11 @@ public class CalculationService {
                 max = item;
         }
         return max;
+    }
+
+    public static void print(List<?> list){
+        for(var item : list){
+            System.out.println(item);
+        }
     }
 }
