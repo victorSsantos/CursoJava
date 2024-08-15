@@ -15,8 +15,7 @@ public class Program {
         System.out.print("Enter file full path: ");
         String fullPath = sc.nextLine();
         Map<String,Integer> computedVotes = new HashMap<>();
-
-        try(BufferedReader reader = new BufferedReader(new FileReader(fullPath))){
+           try(BufferedReader reader = new BufferedReader(new FileReader(fullPath))){
 
             String line = reader.readLine();
             while(line!=null && !line.isEmpty()) {
