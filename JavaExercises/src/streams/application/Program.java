@@ -1,6 +1,6 @@
-package stream.application;
+package streams.application;
 
-import stream.entities.Employee;
+import streams.entities.Employee;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

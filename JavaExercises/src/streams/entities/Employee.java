@@ -1,4 +1,4 @@
-package stream.entities;
+package streams.entities;
 
 public class Employee {
 
